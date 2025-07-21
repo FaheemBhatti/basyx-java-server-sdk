@@ -24,6 +24,9 @@
  ******************************************************************************/
 package org.eclipse.digitaltwin.basyx.submodelregistry.service.events;
 
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -36,10 +39,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.log4j.Log4j2;
 
-@Log4j2
+
 @Component
 @ConditionalOnProperty(prefix = "events", name = "sink", havingValue = "log")
 public class RegistryEventLogSink implements RegistryEventSink {
+
+	private static final Logger log = LoggerFactory.getLogger(RegistryEventLogSink.class);
+
 
 	@Autowired
 	@Qualifier("submodelRegistryMappingJackson2HttpMessageConverter")

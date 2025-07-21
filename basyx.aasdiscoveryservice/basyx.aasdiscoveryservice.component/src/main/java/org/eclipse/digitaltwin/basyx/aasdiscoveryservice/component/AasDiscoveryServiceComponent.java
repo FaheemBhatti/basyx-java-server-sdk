@@ -37,7 +37,7 @@ import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
  * @author schnicke, danish
  *
  */
-@SpringBootApplication(scanBasePackages = "org.eclipse.digitaltwin.basyx", exclude = { MongoAutoConfiguration.class, MongoDataAutoConfiguration.class })
+@SpringBootApplication(scanBasePackages = "org.eclipse.digitaltwin.basyx.aasdiscoveryservice")
 public class AasDiscoveryServiceComponent {
 	public static void main(String[] args) {
 		SpringApplication.run(AasDiscoveryServiceComponent.class, args);

@@ -12,6 +12,8 @@
 	<artifactId>basyx.aasdiscoveryservice.component</artifactId>
 	<name>AAS Discovery Service Component</name>
 
+	<packaging>jar</packaging>
+
 	<properties>
 		<docker.image.name>aas-discovery</docker.image.name>
 		<docker.container.waitForEndpoint>http://localhost:${docker.host.port}/lookup/shells</docker.container.waitForEndpoint>
@@ -113,7 +115,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<classifier>exec</classifier>
+					<skip>true</skip> <!-- Skip the repackage phase -->
 				</configuration>
 			</plugin>
 		</plugins>

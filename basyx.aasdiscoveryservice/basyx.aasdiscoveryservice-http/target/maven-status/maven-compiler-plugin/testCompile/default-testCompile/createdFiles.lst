@@ -1,0 +1,4 @@
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/http/DummyAasDiscoveryServiceComponent.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/http/TestAasDiscoveryServiceHTTP.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/http/AasDiscoveryServiceHTTPSuite.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/http/DummyHttpDiscoveryServiceConfig.class

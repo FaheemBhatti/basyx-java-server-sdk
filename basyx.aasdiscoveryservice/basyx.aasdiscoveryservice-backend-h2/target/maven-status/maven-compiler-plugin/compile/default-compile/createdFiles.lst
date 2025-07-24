@@ -1,0 +1,14 @@
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/backend/H2CrudAasDiscoveryFactory.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/dto/KeyEntity.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/dto/QSpecificAssetIdEntity.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/dto/SpecificAssetIdEntity.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/dto/QKeyEntity.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/configuration/DisableH2AasDiscoveryServiceConfiguration.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/backend/AasDiscoveryDocumentEntity.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/backend/H2AasDiscoveryDocumentBackend.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/dto/QReferenceEntity.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/backend/H2CrudAasDiscovery.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/dto/ReferenceEntity.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/backend/JpaAasDiscoveryDocumentRepository.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/backend/QAasDiscoveryDocumentEntity.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/configuration/H2AasDiscoveryServiceConfiguration.class

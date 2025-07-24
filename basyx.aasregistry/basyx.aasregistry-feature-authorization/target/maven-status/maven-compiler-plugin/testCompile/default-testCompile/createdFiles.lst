@@ -1,0 +1,3 @@
+org/eclipse/digitaltwin/basyx/aasregistry/regression/feature/authorization/DummyAasRegistryComponent.class
+org/eclipse/digitaltwin/basyx/aasregistry/regression/feature/authorization/TestAuthorizedAasRegistry.class
+org/eclipse/digitaltwin/basyx/aasregistry/regression/feature/authorization/AasRegistryTargetInformationAdapterTest.class

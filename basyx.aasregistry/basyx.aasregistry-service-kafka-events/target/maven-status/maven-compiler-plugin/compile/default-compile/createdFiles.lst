@@ -1,0 +1,3 @@
+org/eclipse/digitaltwin/basyx/aasregistry/service/KafkaRegistryEventsConfiguration.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/events/kafka/KafkaRegistryEventSink.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/events/kafka/LogConsumer.class

@@ -1,0 +1,4 @@
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/mongodb/TestMongoDBAasDiscoveryPersistency.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/mongodb/DummyDiscoveryServiceConfig.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/mongodb/MongoDBCrudAasDiscoveryTest.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/mongodb/DummyAasDiscoveryServiceComponent.class

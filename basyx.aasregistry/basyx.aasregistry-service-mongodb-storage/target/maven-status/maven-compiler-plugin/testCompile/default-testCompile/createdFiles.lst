@@ -1,0 +1,7 @@
+org/eclipse/digitaltwin/basyx/aasregistry/service/tests/SearchQueryBuilderTest.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/tests/ProjectionTest.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/tests/MongoDbAasRegistryPersistencyTest.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/tests/DummyMongoDbAasRegistryApplication.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/tests/SearchPathCriteriaBuilderTest.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/tests/MongoDbAasRegistryStorageTest.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/tests/TestConfiguration.class

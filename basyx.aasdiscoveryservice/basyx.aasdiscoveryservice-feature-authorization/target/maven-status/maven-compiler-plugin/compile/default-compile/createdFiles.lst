@@ -1,0 +1,6 @@
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/feature/authorization/AuthorizedAasDiscoveryService.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/feature/authorization/AasDiscoveryServiceTargetInformation.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/feature/authorization/AuthorizedAasDiscoveryServiceConfiguration.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/feature/authorization/rbac/AasDiscoveryServiceTargetPermissionVerifier.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/feature/authorization/AuthorizedAasDiscoveryServiceFactory.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/feature/authorization/AuthorizedAasDiscoveryServiceFeature.class

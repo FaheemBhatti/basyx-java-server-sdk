@@ -1,0 +1,4 @@
+org/eclipse/digitaltwin/basyx/aasregistry/feature/hierarchy/DummyAasRegistryComponent.class
+org/eclipse/digitaltwin/basyx/aasregistry/feature/hierarchy/HierarchicalAasRegistryTestSuite.class
+org/eclipse/digitaltwin/basyx/aasregistry/feature/hierarchy/DummyDescriptorFactory.class
+org/eclipse/digitaltwin/basyx/aasregistry/feature/hierarchy/LocalhostHierarchicalAasRegistryTest.class

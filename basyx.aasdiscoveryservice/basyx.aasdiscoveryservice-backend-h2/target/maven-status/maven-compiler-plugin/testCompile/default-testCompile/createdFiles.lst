@@ -1,0 +1,4 @@
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/TestH2AasDiscoveryService.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/H2CrudAasDiscoveryTest.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/DummyAasDiscoveryServiceComponent.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/h2/DummyDiscoveryServiceConfig.class

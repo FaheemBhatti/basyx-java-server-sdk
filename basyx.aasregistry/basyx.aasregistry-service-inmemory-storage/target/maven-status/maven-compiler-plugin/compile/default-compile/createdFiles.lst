@@ -1,0 +1,17 @@
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/InMemoryStorageSearch$ValueExtractor$ValueExtractionVisitor.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/PaginationSupport.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/SearchMatchers.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/ThreadSafeAccess$TriConsumer.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/AssetAdministrationShellFilter.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/InMemoryStorageSearch.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/InMemoryAasRegistryStorage$DuplicateSubmodelIds.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/configuration/InMemoryAasStorageConfiguration.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/ThreadSafeAasRegistryStorageDecorator.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/InMemoryStorageSearch$CachingValueExtractor.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/ThreadSafeAccess.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/InMemoryAasRegistryStorage.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/InMemoryStorageSearch$ValueExtractor.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/AssetAdministrationShellFilter$SubmodelFilterVisitor.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/AssetAdministrationShellFilter$NonSubmodelFilterVisitor.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/SearchMatchers$TagExtensionMatcher.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/storage/memory/InMemoryAasRegistryStorage$DescriptorFilterFunction.class

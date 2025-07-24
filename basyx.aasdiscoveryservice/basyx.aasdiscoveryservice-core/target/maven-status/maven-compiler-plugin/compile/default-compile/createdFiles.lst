@@ -1,0 +1,7 @@
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/core/feature/AasDiscoveryServiceFeature.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/core/AasDiscoveryService.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/core/AasDiscoveryUtils.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/core/model/QAssetLink.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/core/model/AssetLink.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/core/AasDiscoveryServiceFactory.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/core/feature/DecoratedAasDiscoveryServiceFactory.class

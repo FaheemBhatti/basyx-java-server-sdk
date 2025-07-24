@@ -1,0 +1,7 @@
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/feature/authorization/AuthorizedAasDiscoveryServiceSuite$1.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/feature/authorization/AuthorizedAasDiscoveryServiceSuite.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/feature/authorization/AuthorizedAasDiscoveryServiceSuite$Endpoints.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/feature/authorization/TestAuthorizedAasDiscoveryServiceSpecific.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/feature/authorization/DummyAuthDiscoveryServiceConfig.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/feature/authorization/DummyAasDiscoveryServiceComponent.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/feature/authorization/TestAuthorizedAasDiscoveryServiceWildcard.class

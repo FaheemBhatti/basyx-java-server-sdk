@@ -1,0 +1,8 @@
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/mongodb/configuration/MongoDBAasDiscoveryDocumentBackendConfiguration.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/mongodb/backend/QAasDiscoveryDocumentEntity.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/mongodb/backend/AasDiscoveryDocumentEntity.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/mongodb/converter/AssetLinksConverter.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/mongodb/backend/MongoDBCrudAasDiscoveryFactory.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/mongodb/backend/MongoDBAasDiscoveryDocumentBackend.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/mongodb/backend/MongoDBCrudAasDiscovery.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/backend/mongodb/backend/MongoDBAasDiscoveryDocumentRepository.class

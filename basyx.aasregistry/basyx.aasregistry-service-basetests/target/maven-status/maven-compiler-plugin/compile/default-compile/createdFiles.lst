@@ -1,0 +1,8 @@
+org/eclipse/digitaltwin/basyx/aasregistry/service/tests/AasRegistryStorageTest.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/tests/TestResourcesLoader.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/tests/BaseInterfaceTest.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/tests/ExtensionsTest.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/tests/CloningAasRegistryStorageDecorator.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/tests/integration/ClientRegistryTestObjects.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/tests/integration/PersistencyTestSuite.class
+org/eclipse/digitaltwin/basyx/aasregistry/service/tests/ObjectMapperTest.class

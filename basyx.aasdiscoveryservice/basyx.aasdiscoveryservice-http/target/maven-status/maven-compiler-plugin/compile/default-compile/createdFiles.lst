@@ -1,0 +1,5 @@
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/http/LookupApiController.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/http/AasDiscoveryServiceDescriptionConfiguration.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/http/pagination/InlineResponse200.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/http/LookupApi.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/http/AasDiscoveryServiceHTTPConfiguration.class

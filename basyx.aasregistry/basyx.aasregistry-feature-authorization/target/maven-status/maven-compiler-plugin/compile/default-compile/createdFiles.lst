@@ -1,0 +1,6 @@
+org/eclipse/digitaltwin/basyx/aasregistry/feature/authorization/AasRegistryTargetInformation.class
+org/eclipse/digitaltwin/basyx/aasregistry/feature/authorization/rbac/backend/submodel/AasRegistryTargetInformationAdapter.class
+org/eclipse/digitaltwin/basyx/aasregistry/feature/authorization/AuthorizedAasRegistryFeature.class
+org/eclipse/digitaltwin/basyx/aasregistry/feature/authorization/AuthorizedAasRegistryStorage.class
+org/eclipse/digitaltwin/basyx/aasregistry/feature/authorization/AuthorizedAasRegistryConfiguration.class
+org/eclipse/digitaltwin/basyx/aasregistry/feature/authorization/rbac/AasRegistryTargetPermissionVerifier.class

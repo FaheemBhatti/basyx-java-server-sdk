@@ -1,0 +1,4 @@
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/client/TestConnectedAasDiscovery.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/client/DummyAasDiscoveryServiceComponent.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/client/DummyDiscoveryServiceConfig.class
+org/eclipse/digitaltwin/basyx/aasdiscoveryservice/client/TestAuthorizedConnectedAasDiscovery.class

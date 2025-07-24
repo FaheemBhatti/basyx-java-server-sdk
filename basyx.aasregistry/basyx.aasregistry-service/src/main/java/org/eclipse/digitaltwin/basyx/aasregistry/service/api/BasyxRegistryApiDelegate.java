@@ -45,8 +45,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
-@Component
-@Qualifier("basyxRegistryApiDelegate")
+@Component("basyxRegistryApiDelegate")
 public class BasyxRegistryApiDelegate implements ShellDescriptorsApiDelegate {
 
 	private final AasRegistryStorage storage;

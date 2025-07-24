@@ -46,10 +46,14 @@ import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.ShellDescriptor
 
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
+
 public class AssetAdministrationShellFilter {
 
 	private final Collection<AssetAdministrationShellDescriptor> aasDescriptors;
+
+	public AssetAdministrationShellFilter(Collection<AssetAdministrationShellDescriptor> aasDescriptors) {
+		this.aasDescriptors = aasDescriptors;
+	}
 
 	public List<AssetAdministrationShellDescriptor> filterByRequest(ShellDescriptorSearchRequest request) {
 		GroupedQueries grouped = ShellDescriptorSearchRequests.groupQueries(request.getQuery());
@@ -126,11 +130,15 @@ public class AssetAdministrationShellFilter {
 
 	}
 
-	@RequiredArgsConstructor
+
 	private static final class NonSubmodelFilterVisitor implements AssetAdministrationShellDescriptorVisitor {
 
 		private final BiPredicate<Object[], String> matcher;
 		private boolean wasMatching;
+
+		private NonSubmodelFilterVisitor(BiPredicate<Object[], String> matcher) {
+			this.matcher = matcher;
+		}
 
 		@Override
 		public void visitResolvedPathValue(String path, Object[] objectPathToValue, String value) {

@@ -35,7 +35,6 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import org.eclipse.digitaltwin.basyx.aasregistry.model.AssetAdministrationShellDescriptor;
 import org.eclipse.digitaltwin.basyx.aasregistry.model.AssetKind;
 import org.eclipse.digitaltwin.basyx.aasregistry.model.ShellDescriptorQuery;
@@ -69,7 +68,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.data.mongodb.core.query.UpdateDefinition;
 
-@RequiredArgsConstructor
+
 public class MongoDbAasRegistryStorage implements AasRegistryStorage {
 
 	private static final String MATCHING_SUBMODEL_DESCRIPTORS = "submodelDescriptors.$";
@@ -82,6 +81,10 @@ public class MongoDbAasRegistryStorage implements AasRegistryStorage {
 	private static final String ASSET_KIND = "assetKind";
 
 	private final MongoTemplate template;
+
+	public MongoDbAasRegistryStorage(MongoTemplate template) {
+		this.template = template;
+	}
 
 	@Override
 	public CursorResult<List<AssetAdministrationShellDescriptor>> getAllAasDescriptors(@NonNull PaginationInfo pRequest, @NonNull DescriptorFilter filter) {

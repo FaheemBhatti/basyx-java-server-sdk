@@ -24,19 +24,55 @@
  ******************************************************************************/
 package org.eclipse.digitaltwin.basyx.aasregistry.service.events;
 
-import jakarta.annotation.Nullable;
+
+import io.micrometer.common.lang.Nullable;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.eclipse.digitaltwin.basyx.aasregistry.model.AssetAdministrationShellDescriptor;
 import org.eclipse.digitaltwin.basyx.aasregistry.model.SubmodelDescriptor;
 
-@Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class RegistryEvent {
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public void setSubmodelId(String submodelId) {
+		this.submodelId = submodelId;
+	}
+
+	public void setType(EventType type) {
+		this.type = type;
+	}
+
+	public void setAasDescriptor(AssetAdministrationShellDescriptor aasDescriptor) {
+		this.aasDescriptor = aasDescriptor;
+	}
+
+	public void setSubmodelDescriptor(SubmodelDescriptor submodelDescriptor) {
+		this.submodelDescriptor = submodelDescriptor;
+	}
+
+	public String getSubmodelId() {
+		return submodelId;
+	}
+
+	public EventType getType() {
+		return type;
+	}
+
+	public AssetAdministrationShellDescriptor getAasDescriptor() {
+		return aasDescriptor;
+	}
+
+	public SubmodelDescriptor getSubmodelDescriptor() {
+		return submodelDescriptor;
+	}
 
 	private String id;
 	private @Nullable String submodelId;

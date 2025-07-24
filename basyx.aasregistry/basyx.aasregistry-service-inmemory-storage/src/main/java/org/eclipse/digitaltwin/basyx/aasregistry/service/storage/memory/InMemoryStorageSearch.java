@@ -44,12 +44,14 @@ import org.eclipse.digitaltwin.basyx.aasregistry.model.SortingPath;
 import org.eclipse.digitaltwin.basyx.aasregistry.paths.AasRegistryPathProcessor;
 import org.eclipse.digitaltwin.basyx.aasregistry.paths.AasRegistryPathProcessor.AssetAdministrationShellDescriptorVisitor;
 
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
 class InMemoryStorageSearch {
 
 	private final Collection<AssetAdministrationShellDescriptor> aasDescriptors;
+
+	InMemoryStorageSearch(Collection<AssetAdministrationShellDescriptor> aasDescriptors) {
+		this.aasDescriptors = aasDescriptors;
+	}
 
 	public ShellDescriptorSearchResponse performSearch(ShellDescriptorSearchRequest request) {
 
@@ -111,10 +113,14 @@ class InMemoryStorageSearch {
 		return filter.filterByRequest(request);
 	}
 
-	@RequiredArgsConstructor
+
 	private static class ValueExtractor {
 
 		protected final String path;
+
+		private ValueExtractor(String path) {
+			this.path = path;
+		}
 
 		public String resolveValue(AssetAdministrationShellDescriptor descriptor) {
 			AasRegistryPathProcessor processor = new AasRegistryPathProcessor(descriptor);
@@ -140,9 +146,11 @@ class InMemoryStorageSearch {
 
 		private final Map<AssetAdministrationShellDescriptor, Map<String, String>> cachedValues = new HashMap<>();
 
+
 		public CachingValueExtractor(String path) {
 			super(path);
 		}
+
 
 		@Override
 		public String resolveValue(AssetAdministrationShellDescriptor descriptor) {

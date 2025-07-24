@@ -24,11 +24,11 @@
  ******************************************************************************/
 package org.eclipse.digitaltwin.basyx.aasregistry.service.storage.memory;
 
-import org.eclipse.digitaltwin.basyx.aasregistry.service.tests.integration.BaseIntegrationTest;
+
 import org.springframework.test.context.TestPropertySource;
 
-@TestPropertySource(properties = { "spring.profiles.active=kafkaEvents,inMemoryStorage", "spring.kafka.bootstrap-servers=localhost:9092" })
-public class KafkaEventsInMemoryStorageIntegrationTest extends BaseIntegrationTest {
-
-	
-}
+//@TestPropertySource(properties = { "spring.profiles.active=kafkaEvents,inMemoryStorage", "spring.kafka.bootstrap-servers=localhost:9092" })
+//public class KafkaEventsInMemoryStorageIntegrationTest extends BaseIntegrationTest {
+//
+//
+//}

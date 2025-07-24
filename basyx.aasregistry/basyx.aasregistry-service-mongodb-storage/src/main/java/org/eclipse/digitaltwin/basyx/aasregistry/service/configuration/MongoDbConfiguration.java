@@ -32,6 +32,8 @@ import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.AasRegistryStor
 import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.AasRegistryStorageFeature;
 import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.CursorEncodingRegistryStorage;
 import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.mongodb.MongoDbAasRegistryStorage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -43,13 +45,13 @@ import org.springframework.data.mongodb.core.index.Index;
 import org.springframework.data.mongodb.core.index.IndexOperations;
 import org.springframework.scheduling.annotation.EnableAsync;
 
-import lombok.extern.log4j.Log4j2;
-
 @Configuration
 @ConditionalOnProperty(prefix = "registry", name = "type", havingValue = "mongodb")
 @EnableAsync
-@Log4j2
 public class MongoDbConfiguration {
+
+	private static final Logger log = LoggerFactory.getLogger(MongoDbConfiguration.class);
+
 
 	@Bean
 	public AasRegistryStorage createStorage(MongoTemplate template, List<AasRegistryStorageFeature> features) {

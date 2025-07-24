@@ -28,7 +28,6 @@ import jakarta.validation.Valid;
 import java.util.List;
 import java.util.Set;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import org.eclipse.digitaltwin.basyx.aasregistry.model.AssetAdministrationShellDescriptor;
 import org.eclipse.digitaltwin.basyx.aasregistry.model.ShellDescriptorSearchRequest;
 import org.eclipse.digitaltwin.basyx.aasregistry.model.ShellDescriptorSearchResponse;
@@ -41,12 +40,16 @@ import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.DescriptorFilte
 import org.eclipse.digitaltwin.basyx.core.pagination.CursorResult;
 import org.eclipse.digitaltwin.basyx.core.pagination.PaginationInfo;
 
-@RequiredArgsConstructor
+
 public class ThreadSafeAasRegistryStorageDecorator implements AasRegistryStorage {
 
 	private final AasRegistryStorage storage;
 
 	private final ThreadSafeAccess access = new ThreadSafeAccess();
+
+	public ThreadSafeAasRegistryStorageDecorator(AasRegistryStorage storage) {
+		this.storage = storage;
+	}
 
 	@Override
 	public CursorResult<List<AssetAdministrationShellDescriptor>> getAllAasDescriptors(@NonNull PaginationInfo pRequest, @NonNull DescriptorFilter filter) {

@@ -37,19 +37,19 @@ import io.swagger.v3.oas.models.info.Info;
  * @author danish
  *
  */
-@Configuration
-public class AasDiscoveryServiceApiDocumentationConfiguration extends RepositoryApiDocumentationConfiguration {
-
-	private static final String TITLE = "BaSyx AAS Discovery Service";
-	private static final String DESCRIPTION = "AAS Discovery Service API";
-
-	@Override
-	protected Info apiInfo() {
-		return new Info().title(TITLE)
-				.description(DESCRIPTION)
-				.version(VERSION)
-				.contact(apiContact())
-				.license(apiLicence());
-	}
-
-}
+//@Configuration
+//public class AasDiscoveryServiceApiDocumentationConfiguration extends RepositoryApiDocumentationConfiguration {
+//
+//	private static final String TITLE = "BaSyx AAS Discovery Service";
+//	private static final String DESCRIPTION = "AAS Discovery Service API";
+//
+//	@Override
+//	protected Info apiInfo() {
+//		return new Info().title(TITLE)
+//				.description(DESCRIPTION)
+//				.version(VERSION)
+//				.contact(apiContact())
+//				.license(apiLicence());
+//	}
+//
+//}

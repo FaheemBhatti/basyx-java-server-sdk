@@ -30,14 +30,15 @@ import java.util.Map;
 
 import org.eclipse.digitaltwin.basyx.aasregistry.paths.AasRegistryPathProcessor;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
 public class SegmentBlocksBuilder {
 
 	public final Map<String, String> pathMappings;
-	
+
+	public SegmentBlocksBuilder(Map<String, String> pathMappings) {
+		this.pathMappings = pathMappings;
+	}
+
 	public List<SegmentBlock> buildSegmentBlocks(String searchPath) {
 		PathBuilder pathBuilder = new PathBuilder(pathMappings);
 		SegmentBlockBuildingVisitor buildVisitor = new SegmentBlockBuildingVisitor(pathBuilder);
@@ -45,28 +46,49 @@ public class SegmentBlocksBuilder {
 		return buildVisitor.getSegmentBlocks();
 	}
 
-	@RequiredArgsConstructor
+
 	public static class SegmentBlock {
-		@Getter
+
 		private final String segment;
 
-		@Getter
+
 		private final boolean isLeaf;
-		
-		@Getter
+
+		public String getSegment() {
+			return segment;
+		}
+
+		public boolean isLeaf() {
+			return isLeaf;
+		}
+
+		public boolean isListLeaf() {
+			return isListLeaf;
+		}
+
 		private final boolean isListLeaf;
+
+		public SegmentBlock(String segment, boolean isLeaf, boolean isListLeaf) {
+			this.segment = segment;
+			this.isLeaf = isLeaf;
+			this.isListLeaf = isListLeaf;
+		}
 	}
 	
 	
 	
-	@RequiredArgsConstructor
+
 	public static class SegmentBlockBuildingVisitor implements AasRegistryPathProcessor.AssetAdministrationShellDescriptorPathVisitor {
 
 		private final PathBuilder builder;		
 
 		private List<SegmentBlock> blockSegments = new ArrayList<>();
 
-		
+		public SegmentBlockBuildingVisitor(PathBuilder builder) {
+			this.builder = builder;
+		}
+
+
 		public List<SegmentBlock> getSegmentBlocks() {
 			return blockSegments;
 		}
@@ -99,11 +121,15 @@ public class SegmentBlocksBuilder {
 		}
 	}
 	
-	@RequiredArgsConstructor
+
 	private static class PathBuilder {
 
 		private StringBuilder builder = new StringBuilder();
 		private final Map<String, String> pathMappings;
+
+		private PathBuilder(Map<String, String> pathMappings) {
+			this.pathMappings = pathMappings;
+		}
 
 		public void append(String segment) {
 			segment = pathMappings.getOrDefault(segment, segment);

@@ -33,7 +33,6 @@ import org.eclipse.digitaltwin.basyx.aasregistry.service.errors.AasDescriptorAlr
 import org.eclipse.digitaltwin.basyx.aasregistry.service.errors.AasDescriptorNotFoundException;
 import org.eclipse.digitaltwin.basyx.aasregistry.service.errors.SubmodelNotFoundException;
 import org.eclipse.digitaltwin.basyx.aasregistry.service.events.RegistryEvent;
-import org.eclipse.digitaltwin.basyx.aasregistry.service.events.RegistryEvent.EventType;
 import org.eclipse.digitaltwin.basyx.aasregistry.service.events.RegistryEventSink;
 
 public class RegistrationEventSendingAasRegistryStorage extends AasRegistryStorageDelegate {
@@ -80,7 +79,12 @@ public class RegistrationEventSendingAasRegistryStorage extends AasRegistryStora
 	public void insertSubmodel(@NonNull String aasDescriptorId, @NonNull SubmodelDescriptor submodel) {
 		storage.insertSubmodel(aasDescriptorId, submodel);
 		// always update for now, even if it was an override with the same value
-		RegistryEvent evt = RegistryEvent.builder().id(aasDescriptorId).submodelId(submodel.getId()).type(EventType.SUBMODEL_REGISTERED).submodelDescriptor(submodel).build();
+
+		RegistryEvent evt = new RegistryEvent();
+		evt.setId(aasDescriptorId);
+		evt.setSubmodelId(submodel.getId());
+		evt.setType(RegistryEvent.EventType.SUBMODEL_REGISTERED);
+		evt.setSubmodelDescriptor(submodel);
 		eventSink.consumeEvent(evt);
 	}
 
@@ -100,22 +104,34 @@ public class RegistrationEventSendingAasRegistryStorage extends AasRegistryStora
 	}
 
 	private void aasDescriptorRegistered(@NonNull AssetAdministrationShellDescriptor descriptor) {
-		RegistryEvent evt = RegistryEvent.builder().id(descriptor.getId()).type(RegistryEvent.EventType.AAS_REGISTERED).aasDescriptor(descriptor).build();
+		RegistryEvent evt = new RegistryEvent();
+		evt.setId(descriptor.getId());
+		evt.setType(RegistryEvent.EventType.AAS_REGISTERED);
+		evt.setAasDescriptor(descriptor);
 		eventSink.consumeEvent(evt);
 	}
 
 	private void aasDescriptorUnregistered(String aasDescriptorId) {
-		RegistryEvent evt = RegistryEvent.builder().id(aasDescriptorId).type(RegistryEvent.EventType.AAS_UNREGISTERED).build();
+		RegistryEvent evt = new RegistryEvent();
+		evt.setId(aasDescriptorId);
+		evt.setType(RegistryEvent.EventType.AAS_UNREGISTERED);
 		eventSink.consumeEvent(evt);
 	}
 
 	private void submodelRegistered(@NonNull String aasDescriptorId, @NonNull SubmodelDescriptor submodel) {
-		RegistryEvent evt = RegistryEvent.builder().id(aasDescriptorId).submodelId(submodel.getId()).type(RegistryEvent.EventType.SUBMODEL_REGISTERED).submodelDescriptor(submodel).build();
+		RegistryEvent evt = new RegistryEvent();
+		evt.setId(aasDescriptorId);
+		evt.setSubmodelId(submodel.getId());
+		evt.setSubmodelDescriptor(submodel);
+		evt.setType(RegistryEvent.EventType.SUBMODEL_REGISTERED);
 		eventSink.consumeEvent(evt);
 	}
 
 	private void submodelUnregistered(@NonNull String aasDescriptorId, @NonNull String submodelId) {
-		RegistryEvent evt = RegistryEvent.builder().id(aasDescriptorId).submodelId(submodelId).type(RegistryEvent.EventType.SUBMODEL_UNREGISTERED).build();
+		RegistryEvent evt = new RegistryEvent();
+		evt.setId(aasDescriptorId);
+		evt.setSubmodelId(submodelId);
+		evt.setType(RegistryEvent.EventType.SUBMODEL_UNREGISTERED);
 		eventSink.consumeEvent(evt);
 	}
 }

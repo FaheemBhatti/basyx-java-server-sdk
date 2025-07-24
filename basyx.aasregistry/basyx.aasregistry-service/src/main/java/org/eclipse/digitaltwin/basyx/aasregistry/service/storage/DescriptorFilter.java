@@ -24,17 +24,31 @@
  ******************************************************************************/
 package org.eclipse.digitaltwin.basyx.aasregistry.service.storage;
 
+
 import org.eclipse.digitaltwin.basyx.aasregistry.model.AssetKind;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
+
 
 @Data
-@RequiredArgsConstructor
 public class DescriptorFilter {
 
 	final AssetKind kind;
 	final String assetType;
+
+	public AssetKind getKind() {
+		return kind;
+	}
+
+	public String getAssetType() {
+		return assetType;
+	}
+
+	public DescriptorFilter(AssetKind kind, String assetType) {
+		this.kind = kind;
+
+		this.assetType = assetType;
+	}
 	
 	public boolean isFiltered() {
 		return kind != null || assetType != null;

@@ -43,13 +43,14 @@ import org.springframework.data.mongodb.core.aggregation.BooleanOperators;
 import org.springframework.data.mongodb.core.aggregation.ComparisonOperators;
 import org.springframework.data.mongodb.core.aggregation.ConditionalOperators;
 
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
 public class SearchPathProjectionBuilder {
 
 	private final Map<String, String> pathMappings;
+
+	public SearchPathProjectionBuilder(Map<String, String> pathMappings) {
+		this.pathMappings = pathMappings;
+	}
 
 	public Optional<AggregationExpression> buildSubmodelFilter(List<ShellDescriptorQuery> submodelQueries) {
 		SimpleVarNameProvider varNameProvider = new SimpleVarNameProvider();
@@ -100,10 +101,14 @@ public class SearchPathProjectionBuilder {
 		return expr;
 	}
 
-	@RequiredArgsConstructor
+
 	private static class FilterBuilder {
 
 		private final SimpleVarNameProvider varNameProvider;
+
+		private FilterBuilder(SimpleVarNameProvider varNameProvider) {
+			this.varNameProvider = varNameProvider;
+		}
 
 		private AggregationExpression buildFilterRecursively(FilterRecursionContext context, String parentVariableName) {
 			SegmentBlock segmentBlock = context.segmentsIter.next();
@@ -154,8 +159,7 @@ public class SearchPathProjectionBuilder {
 		}
 	}
 
-	@RequiredArgsConstructor
-	@Data
+
 	private static class FilterRecursionContext {
 
 		private final Iterator<SegmentBlock> segmentsIter;
@@ -163,13 +167,48 @@ public class SearchPathProjectionBuilder {
 		private final QueryTypeEnum queryType;
 		private final String extensionName;
 
+		public Iterator<SegmentBlock> getSegmentsIter() {
+			return segmentsIter;
+		}
+
+		public String getValue() {
+			return value;
+		}
+
+		public QueryTypeEnum getQueryType() {
+			return queryType;
+		}
+
+		public String getExtensionName() {
+			return extensionName;
+		}
+
+		private FilterRecursionContext(Iterator<SegmentBlock> segmentsIter, String value, QueryTypeEnum queryType, String extensionName) {
+			this.segmentsIter = segmentsIter;
+			this.value = value;
+			this.queryType = queryType;
+			this.extensionName = extensionName;
+		}
 	}
 
-	@RequiredArgsConstructor
 	private static class SimpleRegexMatch implements AggregationExpression {
 
 		private final String input;
+
+		public String getInput() {
+			return input;
+		}
+
+		public String getRegex() {
+			return regex;
+		}
+
 		private final String regex;
+
+		private SimpleRegexMatch(String input, String regex) {
+			this.input = input;
+			this.regex = regex;
+		}
 
 		@Override
 		public Document toDocument(AggregationOperationContext context) {

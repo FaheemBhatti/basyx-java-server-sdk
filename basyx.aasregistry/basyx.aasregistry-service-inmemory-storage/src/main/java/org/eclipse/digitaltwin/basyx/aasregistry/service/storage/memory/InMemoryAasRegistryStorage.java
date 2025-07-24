@@ -54,8 +54,6 @@ import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.DescriptorFilte
 import org.eclipse.digitaltwin.basyx.core.pagination.CursorResult;
 import org.eclipse.digitaltwin.basyx.core.pagination.PaginationInfo;
 
-import lombok.RequiredArgsConstructor;
-
 public class InMemoryAasRegistryStorage implements AasRegistryStorage {
 
 	private final TreeMap<String, AssetAdministrationShellDescriptor> aasDescriptorLookupMap = new TreeMap<>();
@@ -68,7 +66,7 @@ public class InMemoryAasRegistryStorage implements AasRegistryStorage {
 
 	@Override
 	public CursorResult<List<AssetAdministrationShellDescriptor>> getAllAasDescriptors(PaginationInfo pRequest, DescriptorFilter filter) {
-		PaginationSupport<AssetAdministrationShellDescriptor> paginationSupport = new PaginationSupport<>(aasDescriptorLookupMap, AssetAdministrationShellDescriptor::getId);
+		PaginationSupport<AssetAdministrationShellDescriptor> paginationSupport = new PaginationSupport<AssetAdministrationShellDescriptor>(aasDescriptorLookupMap, AssetAdministrationShellDescriptor::getId);
 
 		DescriptorFilterFunction function = new DescriptorFilterFunction(filter);
 		return paginationSupport.getDescriptorsPagedAndFiltered(pRequest, filter, function::matches);
@@ -80,7 +78,7 @@ public class InMemoryAasRegistryStorage implements AasRegistryStorage {
 		if (submodels == null) {
 			throw new AasDescriptorNotFoundException(aasDescriptorId);
 		}
-		PaginationSupport<SubmodelDescriptor> paginationSupport = new PaginationSupport<>(submodels, SubmodelDescriptor::getId);
+		PaginationSupport<SubmodelDescriptor> paginationSupport = new PaginationSupport<SubmodelDescriptor>(submodels, SubmodelDescriptor::getId);
 		return paginationSupport.getDescriptorsPaged(pInfo);
 	}
 
@@ -244,10 +242,14 @@ public class InMemoryAasRegistryStorage implements AasRegistryStorage {
 		}
 	}
 
-	@RequiredArgsConstructor
+
 	private static class DescriptorFilterFunction {
 
 		private final DescriptorFilter filter;
+
+		private DescriptorFilterFunction(DescriptorFilter filter) {
+			this.filter = filter;
+		}
 
 		public boolean matches(AssetAdministrationShellDescriptor descr) {
 

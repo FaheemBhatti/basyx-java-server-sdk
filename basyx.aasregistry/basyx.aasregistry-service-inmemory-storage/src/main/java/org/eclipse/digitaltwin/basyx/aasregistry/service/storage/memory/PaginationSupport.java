@@ -38,14 +38,17 @@ import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.DescriptorFilte
 import org.eclipse.digitaltwin.basyx.core.pagination.CursorResult;
 import org.eclipse.digitaltwin.basyx.core.pagination.PaginationInfo;
 
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
 public class PaginationSupport<T extends Object> {
 
 	private final TreeMap<String, T> sortedDescriptorMap;
 	
-	private final Function<T, String> idResolver; 
+	private final Function<T, String> idResolver;
+
+	public PaginationSupport(TreeMap<String, T> sortedDescriptorMap, Function<T, String> idResolver) {
+		this.sortedDescriptorMap = sortedDescriptorMap;
+		this.idResolver = idResolver;
+	}
 
 	public CursorResult<List<T>> getDescriptorsPaged(PaginationInfo pInfo) {
 		return getDescriptorsPagedAndFiltered(pInfo, null, null);

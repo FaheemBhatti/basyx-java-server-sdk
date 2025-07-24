@@ -49,7 +49,7 @@ import static org.junit.Assert.assertEquals;
 public abstract class PersistencyTestSuite {
 	protected static final String DESC_ID = "TestDescriptor";
 
-	protected static final String BASE_URL = "http://localhost:8081";
+	protected static final String BASE_URL = "http://localhost:8080";
 
 	protected abstract AasRegistryStorage getStorage();
 

@@ -37,13 +37,14 @@ import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.ShellDescriptor
 import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.mongodb.SegmentBlocksBuilder.SegmentBlock;
 import org.springframework.data.mongodb.core.query.Criteria;
 
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor
 public class SearchPathCriteriaBuilder {
 
 	private final Map<String, String> pathMappings;
-	
+
+	public SearchPathCriteriaBuilder(Map<String, String> pathMappings) {
+		this.pathMappings = pathMappings;
+	}
+
 
 	public List<Criteria> buildCriterias(GroupedQueries grouped) {
 		List<ShellDescriptorQuery> outsideSm = grouped.getQueriesOutsideSubmodel();
@@ -87,13 +88,37 @@ public class SearchPathCriteriaBuilder {
 		return converter.buildCriteria();
 	}
 
-	@RequiredArgsConstructor
+
 	private static class CriteriaBuilder {
 
 		private final String value;
 		private final QueryTypeEnum queryType;
+
+		public String getValue() {
+			return value;
+		}
+
+		public QueryTypeEnum getQueryType() {
+			return queryType;
+		}
+
+		public List<SegmentBlock> getSegments() {
+			return segments;
+		}
+
+		public String getExtensionName() {
+			return extensionName;
+		}
+
 		private final List<SegmentBlock> segments;
 		private final String extensionName;
+
+		private CriteriaBuilder(String value, QueryTypeEnum queryType, List<SegmentBlock> segments, String extensionName) {
+			this.value = value;
+			this.queryType = queryType;
+			this.segments = segments;
+			this.extensionName = extensionName;
+		}
 
 		public Criteria buildCriteria() {
 			return buildCriteriaRecursively(segments.iterator());

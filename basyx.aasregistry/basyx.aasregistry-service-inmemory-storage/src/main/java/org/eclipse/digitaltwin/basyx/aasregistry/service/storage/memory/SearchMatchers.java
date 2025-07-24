@@ -36,8 +36,6 @@ import org.eclipse.digitaltwin.basyx.aasregistry.model.Extension;
 import org.eclipse.digitaltwin.basyx.aasregistry.model.ShellDescriptorQuery;
 import org.eclipse.digitaltwin.basyx.aasregistry.model.ShellDescriptorQuery.QueryTypeEnum;
 
-import lombok.RequiredArgsConstructor;
-
 class SearchMatchers {
 
 	private SearchMatchers() {		
@@ -73,12 +71,16 @@ class SearchMatchers {
 	}
 	
 	
-	@RequiredArgsConstructor
+
 	private static class TagExtensionMatcher implements BiPredicate<Object[], String> {
 
 		private final String extensionName;
 
-		
+		private TagExtensionMatcher(String extensionName) {
+			this.extensionName = extensionName;
+		}
+
+
 		@Override
 		public boolean test(Object[] objectPath, String currentElem) {
 			Extension extension = getExtensionObject(objectPath);

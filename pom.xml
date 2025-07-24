@@ -307,6 +307,11 @@
 				</exclusions>
 			</dependency>
 			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>1.18.38</version>
+			</dependency>
+			<dependency>
 				<groupId>org.eclipse.digitaltwin.aas4j</groupId>
 				<artifactId>aas4j-dataformat-xml</artifactId>
 				<version>${aas4j-version}</version>

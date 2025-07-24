@@ -29,18 +29,22 @@ import java.util.concurrent.ExecutionException;
 
 import org.eclipse.digitaltwin.basyx.aasregistry.service.events.RegistryEvent;
 import org.eclipse.digitaltwin.basyx.aasregistry.service.events.RegistryEventSink;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.messaging.support.GenericMessage;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
 
-@Log4j2
-@RequiredArgsConstructor
 public class KafkaRegistryEventSink implements RegistryEventSink {
 
+	private static final Logger log = LoggerFactory.getLogger(KafkaRegistryEventSink.class);
+
 	private final KafkaTemplate<String, String> template;
+
+	public KafkaRegistryEventSink(KafkaTemplate<String, String> template) {
+		this.template = template;
+	}
 
 	@Override
 	public void consumeEvent(RegistryEvent evt) {

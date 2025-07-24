@@ -31,17 +31,17 @@ import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.AasRegistryStor
 import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.CursorEncodingRegistryStorage;
 import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.memory.InMemoryAasRegistryStorage;
 import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.memory.ThreadSafeAasRegistryStorageDecorator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import lombok.extern.log4j.Log4j2;
-
 @Configuration
-@Log4j2
 public class InMemoryAasStorageConfiguration {
 
-	
+	private static final Logger log = LoggerFactory.getLogger(InMemoryAasStorageConfiguration.class);
+
 	
 	@Bean
 	@ConditionalOnProperty(prefix = "registry", name = "type", havingValue = "inMemory")

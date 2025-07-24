@@ -30,11 +30,6 @@ import java.util.List;
 import org.eclipse.digitaltwin.basyx.aasregistry.model.ShellDescriptorQuery;
 import org.eclipse.digitaltwin.basyx.aasregistry.paths.AasRegistryPaths;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-
-
 public class ShellDescriptorSearchRequests {
 
 	private ShellDescriptorSearchRequests() {
@@ -53,19 +48,23 @@ public class ShellDescriptorSearchRequests {
 		}
 		return new GroupedQueries(rootQueries, submodelQueries);
 	}
-	
-	
-	@Getter
-	@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
+
 	public static class GroupedQueries {
-		
-		
+
 		private final List<ShellDescriptorQuery> queriesOutsideSubmodel;
-		
 		private final List<ShellDescriptorQuery> queriesInsideSubmodel;
-		
-		
+
+		public List<ShellDescriptorQuery> getQueriesOutsideSubmodel() {
+			return queriesOutsideSubmodel;
+		}
+
+		public List<ShellDescriptorQuery> getQueriesInsideSubmodel() {
+			return queriesInsideSubmodel;
+		}
+
+		public GroupedQueries(List<ShellDescriptorQuery> queriesOutsideSubmodel, List<ShellDescriptorQuery> queriesInsideSubmodel) {
+			this.queriesOutsideSubmodel = queriesOutsideSubmodel;
+			this.queriesInsideSubmodel = queriesInsideSubmodel;
+		}
 	}
-	
-	
 }

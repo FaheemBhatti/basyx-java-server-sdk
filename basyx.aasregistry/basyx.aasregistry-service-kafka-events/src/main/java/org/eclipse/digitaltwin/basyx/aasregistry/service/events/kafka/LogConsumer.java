@@ -26,6 +26,8 @@ package org.eclipse.digitaltwin.basyx.aasregistry.service.events.kafka;
 
 import java.io.IOException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
@@ -33,9 +35,10 @@ import org.springframework.stereotype.Component;
 import lombok.extern.log4j.Log4j2;
 
 @Component
-@Log4j2
 @ConditionalOnProperty(prefix = "events", name = "sink", havingValue = "kafka")
 public class LogConsumer {
+
+	private static final Logger log = LoggerFactory.getLogger(LogConsumer.class);
 
 	
 	@KafkaListener(topics = "aas-registry", groupId = "log", autoStartup = "true")

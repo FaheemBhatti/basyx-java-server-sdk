@@ -33,15 +33,18 @@ import org.eclipse.digitaltwin.basyx.aasregistry.service.errors.ExtensionPathInv
 import org.eclipse.digitaltwin.basyx.aasregistry.service.events.RegistryEventSink;
 import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.AasRegistryStorage;
 import org.eclipse.digitaltwin.basyx.aasregistry.service.storage.RegistrationEventSendingAasRegistryStorage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("basyxSearchApiDelegate")
 public class BasyxSearchApiDelegate implements SearchApiDelegate {
 
 	private final AasRegistryStorage storage;
 
-	public BasyxSearchApiDelegate(AasRegistryStorage storage, RegistryEventSink eventSink) {
+	@Autowired
+	public BasyxSearchApiDelegate(AasRegistryStorage storage, @Qualifier("registryEventLogSink") RegistryEventSink eventSink) {
 		this.storage = new RegistrationEventSendingAasRegistryStorage(storage, eventSink);
 	}
 
